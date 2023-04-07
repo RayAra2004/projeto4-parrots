@@ -1,0 +1,13 @@
+@media (max-device-width: 640px ) {
+    h1{
+        width: 100%;
+        font-size: 36px;
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .cartas{
+        width: 100%;
+    }
+}
