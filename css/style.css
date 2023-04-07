@@ -46,13 +46,13 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    /*position: absolute;*/
+    position: absolute;
     backface-visibility: hidden;
     transition: all .5s;
     transform-style: preserve-3d;
     border: 1px solid #99CEA8;
     border-radius: 5px;
-    position: relative;
+   
 }
 
 img{
