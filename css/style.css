@@ -72,11 +72,18 @@ transform: rotateY(180deg);
 .virada2{
     transform: rotateY(0deg);
 }
-/*
-.card:hover .back-face {
-transform: rotateY(0deg);
-}
 
-.card:hover .front-face {
-transform: rotateY(-180deg);
-}*/
+.relogio{
+    position: fixed;
+    top: 30px;
+    right: 45px;
+    height: 40px;
+    width: 80px;
+    color: #FFFFFF;
+    background-color: #3f3f3f;
+    border-radius: 6px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

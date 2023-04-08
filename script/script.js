@@ -1,5 +1,8 @@
-let qtdCartasViradas = 0, qtdJogadas = 0, qtdPares = 0, carta1, carta2;
-let qtdCartas = Number(prompt('Digite a quantidade de cartas.'));
+let qtdCartasViradas = 0, qtdJogadas = 0, qtdPares = 0, tempo = 0, qtdCartas =0, carta1, carta2;
+const divRelogio = document.querySelector('.relogio');
+let idTime;
+
+qtdCartas = Number(prompt('Digite a quantidade de cartas.'));
 const divCartas = document.querySelector('.cartas');
 const parrots = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot', 'revertitparrot', 'tripletsparrot', 'unicornparrot'];
 parrots.sort(comparador);
@@ -27,6 +30,9 @@ for(j=0; j < imgsSelecionadas.length; j++){
             </div>
         </div>`;
 }
+
+idTime = setInterval(updateRelogio, 1000);
+
 
 function comparador(){
     return Math.random() - 0.5; 
@@ -58,9 +64,11 @@ function comparaCartas(){
         carta2.removeAttribute('onclick');
         qtdPares++;
         if(qtdCartas/2 === qtdPares){
+            clearInterval(idTime);
             setTimeout(function(){
-                alert(`Você ganhou em ${qtdJogadas} jogadas!`)
+                alert(`Você ganhou em ${qtdJogadas} jogadas! A duração do jogo foi de ${tempo} segundos!`)
             }, 500);
+            setTimeout(reiniciaJogo, 500);
         }
    }else{
         setTimeout(desvirar, 1000);
@@ -73,4 +81,20 @@ function desvirar(){
     carta2.children[0].classList.toggle('virada');
     carta2.children[1].classList.toggle('virada2');
     qtdCartasViradas = 0;
+}
+
+function updateRelogio(){
+    tempo++;
+    divRelogio.innerHTML = tempo;
+}
+
+function reiniciaJogo(){
+    let resposta = prompt("Deseja jogar novamente?");
+    while(resposta !== "sim"){
+        resposta = prompt("Deseja jogar novamente?");
+    }
+
+    if(resposta === "sim"){
+        jogo();
+    }
 }
