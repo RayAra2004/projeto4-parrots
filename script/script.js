@@ -24,12 +24,12 @@ function jogo(){
 
     for(j=0; j < imgsSelecionadas.length; j++){
         divCartas.innerHTML +=  `
-            <div onclick="virar(this)" class="card">
+            <div data-test="card" onclick="virar(this)" class="card">
                 <div class="front-face face">
-                <img src="./imgs/back.png" alt="">
+                <img data-test="face-down-image" src="./imgs/back.png" alt="">
                 </div>
                 <div class="back-face face">
-                <img src="./imgs/${imgsSelecionadas[j]}.gif" alt="">
+                <img data-test="face-up-image" src="./imgs/${imgsSelecionadas[j]}.gif" alt="">
                 </div>
             </div>`;
     }
