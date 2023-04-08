@@ -65,10 +65,18 @@ img{
 transform: rotateY(180deg);
 }
 
+.virada{
+    transform: rotateY(-180deg);
+}
+
+.virada2{
+    transform: rotateY(0deg);
+}
+/*
 .card:hover .back-face {
 transform: rotateY(0deg);
 }
 
 .card:hover .front-face {
 transform: rotateY(-180deg);
-}
+}*/
